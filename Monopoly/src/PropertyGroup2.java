@@ -1,5 +1,5 @@
 
-public class propertyGroup2 {
+public class PropertyGroup2 {
 
 	private String groupTitle;
 	private String property1Name;
@@ -9,15 +9,15 @@ public class propertyGroup2 {
 	private String property3Name;
 	private String property3Price;
 	
-	public propertyGroup2(String t, String p1n, String p1p, String p2n, String p2p, String p3n, String p3p) {
+	public PropertyGroup2(String t, String p1n, String p1p, String p2n, String p2p, String p3n, String p3p) {
 		
-		t = groupTitle;
-		p1n = property1Name;
-		p1p = property1Price;
-		p2n = property2Name;
-		p2p = property2Price;
-		p3n = property3Name;
-		p3p = property3Price; 
+		groupTitle=t;
+		property1Name=p1n;
+		property1Price=p1p;
+		property2Name=p2n;
+		property2Price=p2p;
+		property3Name=p3n;
+		property3Price=p3p; 
 	}
 
 	public String getGroupTitle() {

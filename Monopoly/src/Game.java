@@ -3,14 +3,15 @@ public class Game {
 	
 	private String title;
 	private String goName;
-	private String propertyGroup1;
-	private String propertyGroup2;
-	private String propertyGroup3;
-	private String propertyGroup4;
-	private String propertyGroup5;
-	private String propertyGroup6;
-	private String propertyGroup7;
-	private String propertyGroup8;
+	private Properties properties;
+	private PropertyGroup1 propertyGroup1;
+	private PropertyGroup2 propertyGroup2;
+	private PropertyGroup3 propertyGroup3;
+	private PropertyGroup4 propertyGroup4;
+	private PropertyGroup5 propertyGroup5;
+	private PropertyGroup6 propertyGroup6;
+	private PropertyGroup7 propertyGroup7;
+	private PropertyGroup8 propertyGroup8;
 	
 	
 	
