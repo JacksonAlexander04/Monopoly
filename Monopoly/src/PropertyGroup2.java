@@ -1,15 +1,15 @@
 
-public class PropertyGroup2 {
+public class PropertyGroup2 extends Properties {
 
-	private String groupTitle;
-	private String property1Name;
-	private String property1Price;
-	private String property2Name;
-	private String property2Price;
-	private String property3Name;
-	private String property3Price;
+//	private String groupTitle;
+//	private String property1Name;
+//	private int property1Price;
+//	private String property2Name;
+//	private int property2Price;
+//	private String property3Name;
+//	private int property3Price;
 	
-	public PropertyGroup2(String t, String p1n, String p1p, String p2n, String p2p, String p3n, String p3p) {
+	public PropertyGroup2(String t, String p1n, int p1p, String p2n, int p2p, String p3n, int p3p) {
 		
 		groupTitle=t;
 		property1Name=p1n;
@@ -36,11 +36,11 @@ public class PropertyGroup2 {
 		this.property1Name = property1Name;
 	}
 
-	public String getProperty1Price() {
+	public int getProperty1Price() {
 		return property1Price;
 	}
 
-	public void setProperty1Price(String property1Price) {
+	public void setProperty1Price(int property1Price) {
 		this.property1Price = property1Price;
 	}
 
@@ -52,11 +52,11 @@ public class PropertyGroup2 {
 		this.property2Name = property2Name;
 	}
 
-	public String getProperty2Price() {
+	public int getProperty2Price() {
 		return property2Price;
 	}
 
-	public void setProperty2Price(String property2Price) {
+	public void setProperty2Price(int property2Price) {
 		this.property2Price = property2Price;
 	}
 
@@ -68,11 +68,11 @@ public class PropertyGroup2 {
 		this.property3Name = property3Name;
 	}
 
-	public String getProperty3Price() {
+	public int getProperty3Price() {
 		return property3Price;
 	}
 
-	public void setProperty3Price(String property3Price) {
+	public void setProperty3Price(int property3Price) {
 		this.property3Price = property3Price;
 	}
 }

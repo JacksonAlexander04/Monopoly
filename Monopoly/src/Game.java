@@ -4,19 +4,28 @@ public class Game {
 	private String title;
 	private String goName;
 	private Properties properties;
-	private PropertyGroup1 propertyGroup1;
-	private PropertyGroup2 propertyGroup2;
-	private PropertyGroup3 propertyGroup3;
-	private PropertyGroup4 propertyGroup4;
-	private PropertyGroup5 propertyGroup5;
-	private PropertyGroup6 propertyGroup6;
-	private PropertyGroup7 propertyGroup7;
-	private PropertyGroup8 propertyGroup8;
+	private UtilityGroup utilityGroup;
+	private RailroadGroup railroadGroup;
+	private ChanceCards chanceCards;
+	private CommunityChestCards communityChestCards;
+	private Pieces pieces;
 	
-	
+	protected int location;
 	
 	public Game() {
+		// Implemented to allow implementation of utilities, railroads, and properties
+	}
+	
+	public Game(String t, String gn, Properties prop, UtilityGroup ug, RailroadGroup rg, ChanceCards cc, CommunityChestCards ccc, Pieces piec) {
 		
+		title = t;
+		goName = gn;
+		properties = prop;
+		utilityGroup = ug;
+		railroadGroup = rg;
+		chanceCards = cc;
+		communityChestCards = ccc;
+		pieces = piec;
 	}
 
 }

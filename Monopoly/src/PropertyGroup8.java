@@ -1,5 +1,5 @@
 
-public class PropertyGroup1 extends Properties {
+public class PropertyGroup8 extends Properties {
 
 //	private String groupTitle;
 //	private String property1Name;
@@ -7,7 +7,7 @@ public class PropertyGroup1 extends Properties {
 //	private String property2Name;
 //	private int property2Price;
 	
-	public PropertyGroup1(String t, String p1n, int p1p, String p2n, int p2p) {
+	public PropertyGroup8(String t, String p1n, int p1p, String p2n, int p2p) {
 		
 		groupTitle=t;
 		property1Name=p1n;
