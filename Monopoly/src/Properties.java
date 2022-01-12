@@ -14,10 +14,13 @@ public class Properties extends Game {
 	protected String groupTitle;
 	protected String property1Name;
 	protected int property1Price;
+	protected int location1;
 	protected String property2Name;
 	protected int property2Price;
+	protected int location2;
 	protected String property3Name;
 	protected int property3Price;
+	protected int location3;
 	
 	
 	public Properties() {
