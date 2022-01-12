@@ -10,6 +10,7 @@ public class Game {
 	private CommunityChestCards communityChestCards;
 	private Pieces pieces;
 	
+	
 	protected int location;
 	
 	public Game() {
