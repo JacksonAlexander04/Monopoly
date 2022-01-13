@@ -9,15 +9,18 @@ public class PropertyGroup6 extends Properties {
 //	private String property3Name;
 //	private int property3Price;
 	
-	public PropertyGroup6(String t, String p1n, int p1p, String p2n, int p2p, String p3n, int p3p) {
+	public PropertyGroup6(String t, String p1n, int p1p, int l1, String p2n, int p2p, int l2, String p3n, int p3p, int l3) {
 		
 		groupTitle=t;
 		property1Name=p1n;
 		property1Price=p1p;
+		location1 = l1;
 		property2Name=p2n;
 		property2Price=p2p;
+		location2 = l2;
 		property3Name=p3n;
 		property3Price=p3p; 
+		location3 = l3;
 	}
 
 	public String getGroupTitle() {

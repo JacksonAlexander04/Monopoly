@@ -66,4 +66,20 @@ public class RailroadGroup extends Game {
 	public void setRailroad4Name(String railroad4Name) {
 		this.railroad4Name = railroad4Name;
 	}
+	
+	public int getRailroad1Location() {
+		return 5;
+	}
+	
+	public int getRailroad2Location() {
+		return 15;
+	}
+	
+	public int getRailroad3Location() {
+		return 25;
+	}
+	
+	public int getRailroad4Location() {
+		return 35;
+	}
 }
