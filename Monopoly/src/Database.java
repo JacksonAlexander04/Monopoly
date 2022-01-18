@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Database {
 
-	private static ArrayList<Game> gameDatabase = new ArrayList<Game>();
+	public static ArrayList<Game> gameDatabase = new ArrayList<Game>();
 	
 	public static void generateDatabase() {
 		
