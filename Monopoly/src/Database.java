@@ -20,8 +20,8 @@ public class Database {
 						new PropertyGroup8("Dark Blue","Park Place",350,37,"Boardwalk",400,39)),
 				new UtilityGroup("Utilities","Electric Company",110,"Water Works", 115),
 				new RailroadGroup("Railroads", 200, "God", "Jesus", "Father", "Holy Spirit"),
-				new ChanceCards(), // Import Chance cards with a .csv file in the format: cardTitle,cardContent,Action
-				new CommunityChestCards(), // Import Community Chest cards with a .csv file in the format: cardTitle,cardContent,Action
+				//new ChanceCards(), // Import Chance cards with a .csv file in the format: cardTitle,cardContent,Action
+				//new CommunityChestCards(), // Import Community Chest cards with a .csv file in the format: cardTitle,cardContent,Action
 				new Pieces("Top hat", "Dog", "Thimble", "Boot", "Wheelbarrow", "Cat", "Iron", "Battleship")
 				));
 
