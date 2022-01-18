@@ -49,6 +49,7 @@ public static int location = 0;
 			System.out.println("You roll the dice and you get a roll of " + dice.totalDice );
 			location = location  + dice.totalDice;
 			
+			//We need to connect the location to the space on the board and then we need to ask the user if they want to buy or not
 			
 			
 			//System.out.println(dice.totalDice);
