@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Database {
 
-	private static ArrayList<Game> gameDatabase = new ArrayList<Game>();
+	public static ArrayList<Game> gameDatabase = new ArrayList<Game>();
 	
-	public static void main(String[] args) {
+	public static void generateDatabase() {
 		
 		gameDatabase.add(new Game(
 				"Monopoly - Original",
