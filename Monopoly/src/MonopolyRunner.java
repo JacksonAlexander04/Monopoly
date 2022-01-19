@@ -47,7 +47,9 @@ public class MonopolyRunner
 						Database.gameDatabase.get(gameIndex).getCommunityChestCards();
 					}
 					else if (p.getLocation() == 7 || p.getLocation() == 22 || p.getLocation() == 36) {
-						Database.gameDatabase.get(gameIndex).getChanceCards();
+						//Database.gameDatabase.get(gameIndex).getChanceCards();
+						ChanceCards.CardRunner();
+						
 					}
 					
 					
