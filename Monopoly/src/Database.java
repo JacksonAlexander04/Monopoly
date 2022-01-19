@@ -7,7 +7,7 @@ public class Database {
 	public static void generateDatabase() {
 		
 		gameDatabase.add(new Game(
-				"Monopoly - Original",
+				"Original Monopoly",
 				"GO",
 				new Properties(
 						new PropertyGroup1("Brown","Mediterranean Avenue",60,1,"Baltic Avenue",60,3), 
@@ -18,10 +18,10 @@ public class Database {
 						new PropertyGroup6("Yellow","Atlantic Avenue",260,26,"Ventnor Avenue",260,27,"Marvin Gardens",280,29), 
 						new PropertyGroup7("Green","Pacific Avenue",300,31,"North Carolina Avenue",300,32,"Pennsylvania Avenue",320,34), 
 						new PropertyGroup8("Dark Blue","Park Place",350,37,"Boardwalk",400,39)),
-				new UtilityGroup("Utilities","Electric Company",110,"Water Works", 115),
-				new RailroadGroup("Railroads", 200, "God", "Jesus", "Father", "Holy Spirit"),
-				new ChanceCards(), // Import Chance cards with a .csv file in the format: cardTitle,cardContent,Action
-				new CommunityChestCards(), // Import Community Chest cards with a .csv file in the format: cardTitle,cardContent,Action
+				new UtilityGroup("Utilities","Electric Company",110,12,"Water Works", 115,28),
+				new RailroadGroup("Railroads", 200, "Reading Railroad", 5, "Pennsylvania Railroad", 15, "B. & O. Railroad", 25, "Short Line", 35),
+				//new ChanceCards(), // Import Chance cards with a .csv file in the format: cardTitle,cardContent,Action
+				//new CommunityChestCards(), // Import Community Chest cards with a .csv file in the format: cardTitle,cardContent,Action
 				new Pieces("Top hat", "Dog", "Thimble", "Boot", "Wheelbarrow", "Cat", "Iron", "Battleship")
 				));
 

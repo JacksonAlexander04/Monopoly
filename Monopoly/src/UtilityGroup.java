@@ -4,16 +4,20 @@ public class UtilityGroup extends Game {
 	private String utilityGroupTitle;
 	private String utility1Name;
 	private int utility1Price;
+	private int location1;
 	private String utility2Name;
 	private int utility2Price;
+	private int location2;
 	
-	public UtilityGroup(String t, String p1n, int p1p, String p2n, int p2p) {
+	public UtilityGroup(String t, String p1n, int p1p, int l1, String p2n, int p2p, int l2) {
 		
 		utilityGroupTitle=t;
 		utility1Name=p1n;
 		utility1Price=p1p;
+		location1=l1;
 		utility2Name=p2n;
 		utility2Price=p2p;
+		location2=l2;
 	}
 
 	public String getGroupTitle() {

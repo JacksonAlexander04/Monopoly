@@ -4,18 +4,26 @@ public class RailroadGroup extends Game {
 	private String railroadGroupTitle;
 	private int railroadPrices;
 	private String railroad1Name;
+	private int location1;
 	private String railroad2Name;
+	private int location2;
 	private String railroad3Name;
+	private int location3;
 	private String railroad4Name;
+	private int location4;
 	
-	public RailroadGroup(String t, int price, String r1n, String r2n, String r3n, String r4n) {
+	public RailroadGroup(String t, int price, String r1n, int l1, String r2n, int l2, String r3n, int l3, String r4n, int l4) {
 		
 		railroadGroupTitle=t;
 		railroadPrices = price;
 		railroad1Name = r1n;
+		location1=l1;
 		railroad2Name = r2n;
+		location2=l2;
 		railroad3Name = r3n;
+		location3=l3;
 		railroad4Name = r4n;
+		location4=l4;
 		
 	}
 
