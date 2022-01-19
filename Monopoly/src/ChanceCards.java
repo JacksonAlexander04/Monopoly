@@ -5,8 +5,9 @@ public class ChanceCards extends Game {
 	
 	int location;
 	
-	public static int CardRunner() {
-		
+
+	public static int ChanceCards() {
+
 			System.out.println("You have landed on a chance card");
 			
 			if(randomChance == 1)
@@ -47,6 +48,8 @@ public class ChanceCards extends Game {
 				{
 					System.out.println("error");
 				}
+			
+			return 0;
 	
 		
 	
