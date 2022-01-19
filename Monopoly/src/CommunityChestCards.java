@@ -6,4 +6,3 @@ public class CommunityChestCards extends Game {
 			
 		}
 	}
-}
