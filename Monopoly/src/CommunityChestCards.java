@@ -6,4 +6,7 @@ public class CommunityChestCards extends Game {
 			
 		}
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
