@@ -58,7 +58,8 @@ public class MonopolyRunner
 						String yOrN = scanner.nextLine();
 						if (yOrN.equals("y")) {
 							p.setMoney(p.getMoney()-Integer.parseInt(locationConverter(p.getLocation()).split(" ", 2)[0]));
-							System.out.println("Your new ballance is $"+ p.getMoney());
+							System.out.println("Your new balance is $"+ p.getMoney());
+							p.addProperty(new String[] {locationConverter(p.getLocation()).split("^[0-9]{1,3} ")[1], }); //add rent
 						}
 					}
 					
@@ -106,7 +107,7 @@ public class MonopolyRunner
 				
 				
 				// add the player to the list, and delete the token option for the next player
-				playerList.add(new Player(Database.gameDatabase.get(gameIndex).getPieces().getPiece(pieceIndex-1), 1500, 0));
+				playerList.add(new Player(Database.gameDatabase.get(gameIndex).getPieces().getPiece(pieceIndex-1), 1500, 0, new ArrayList <String[]>()));
 				Database.gameDatabase.get(gameIndex).getPieces().removePiece(pieceIndex-1);
 			}
 		}
