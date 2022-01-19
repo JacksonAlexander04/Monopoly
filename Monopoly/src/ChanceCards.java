@@ -5,8 +5,9 @@ public class ChanceCards extends Game {
 	
 	int location;
 	
+
 	public static int ChanceCards() {
-		
+
 			System.out.println("You have landed on a chance card");
 			
 			if(randomChance == 1)

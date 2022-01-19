@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class MonopolyRunner
 	{
+
 	
 	private static ArrayList<Player> playerList = new ArrayList<Player>();
 	private static int gameIndex = 0;
@@ -46,7 +47,9 @@ public class MonopolyRunner
 						Database.gameDatabase.get(gameIndex).getCommunityChestCards();
 					}
 					else if (p.getLocation() == 7 || p.getLocation() == 22 || p.getLocation() == 36) {
+
 						p.setLocation(ChanceCards.ChanceCards());
+
 					}
 					
 					
@@ -101,6 +104,7 @@ public class MonopolyRunner
 				for (int j = 1; j <= Database.gameDatabase.get(gameIndex).getPieces().getSize(); j++) {
 					System.out.println("(" + j + ") " + Database.gameDatabase.get(gameIndex).getPieces().getPiece(j-1));
 				}
+
 				
 				int pieceIndex = Integer.parseInt(scanner.next());
 				scanner.nextLine();
