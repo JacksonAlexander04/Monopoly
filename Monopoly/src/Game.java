@@ -18,21 +18,18 @@ public class Game {
 		// Implemented to allow implementation of utilities, railroads, and properties
 	}
 	
-<<<<<<< HEAD
-	public Game(String t, String gn, Properties prop, UtilityGroup ug, RailroadGroup rg, Pieces piec) {
-=======
+
 	public Game(String t, String gn, Properties prop, UtilityGroup ug, RailroadGroup rg, SpecialSpaces sp, Pieces piec) {
->>>>>>> upstream/master
+
 		
 		title = t;
 		goName = gn;
 		properties = prop;
 		utilityGroup = ug;
 		railroadGroup = rg;
-<<<<<<< HEAD
-=======
+
 		specialSpaces = sp;
->>>>>>> upstream/master
+
 		//chanceCards = cc;
 		//communityChestCards = ccc;
 		pieces = piec;
