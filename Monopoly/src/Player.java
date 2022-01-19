@@ -1,15 +1,18 @@
+import java.util.ArrayList;
 
 public class Player {
 
 	private String name;
 	private int money;
 	private int location;
+	private ArrayList <String[]> inventory = new ArrayList <String[]> ();
 	
-	public Player (String n, int m, int l) {
+	public Player (String n, int m, int l, ArrayList <String[]> i) {
 		
 		name = n;
 		money = m;
 		location = l;
+		inventory = i;
 		
 	}
 
@@ -35,5 +38,12 @@ public class Player {
 
 	public void setLocation(int location) {
 		this.location = location;
+
 	}
+	
+	public void addProperty(String[] s)
+	{
+		inventory.add(s);
+	}
+	
 }
