@@ -5,7 +5,7 @@ public class ChanceCards extends Game {
 	
 	int location;
 	
-	public ChanceCards() {
+	public static int ChanceCards() {
 		
 			System.out.println("You have landed on a chance card");
 			
@@ -13,33 +13,33 @@ public class ChanceCards extends Game {
 				{	
 					
 					System.out.println("Go To Jail");
-					int location = 10;
+					return 10;
 					
 				}
 			
 			else if(randomChance == 2)
 				{
 					System.out.println("Go to Start Space and collect $200");
-					int location = 0; 
+					return 0; 
 					
 				}
 			
 			else if(randomChance == 3)
 				{
 					System.out.println("Go to Pacific Avenue");
-					int location = 31;
+					return 31;
 				}
 		
 			else if(randomChance == 4)
 				{
 					System.out.println("Go to Electric Company");
-					int location = 12;
+					return 12;
 				}
 			
 			else if(randomChance == 5)
 				{
 					System.out.println("Go to Income Tax");
-					int location = 4;
+					return 4;
 					
 				}
 			
@@ -47,6 +47,8 @@ public class ChanceCards extends Game {
 				{
 					System.out.println("error");
 				}
+			
+			return 0;
 	
 		
 	
