@@ -46,14 +46,20 @@ public class MonopolyRunner
 						Database.gameDatabase.get(gameIndex).getCommunityChestCards();
 					}
 					else if (p.getLocation() == 7 || p.getLocation() == 22 || p.getLocation() == 36) {
-						Database.gameDatabase.get(gameIndex).getChanceCards();
+						p.setLocation(ChanceCards.ChanceCards());
 					}
 					
 					
 					// if landed on a purchasable property, execute this. 
 					if (p.getLocation() != 7 && p.getLocation() != 22 && p.getLocation() != 36 && p.getLocation() != 2 && p.getLocation() != 17 && p.getLocation() != 33 && p.getLocation() != 0 && p.getLocation() != 10 && p.getLocation() != 20 && p.getLocation() != 30 && p.getLocation() != 38 && p.getLocation() != 4) {
-						System.out.println("Nobody owns this property, would you like to purchase it?\nThe"
+						System.out.println("Nobody owns this property, would you like to purchase it? (y/n)\nThe"
 								+ " price is " + locationConverter(p.getLocation()).split(" ", 2)[0] + "\nYour current balance is $" + p.getMoney());
+						
+						String yOrN = scanner.nextLine();
+						if (yOrN.equals("y")) {
+							p.setMoney(p.getMoney()-Integer.parseInt(locationConverter(p.getLocation()).split(" ", 2)[0]));
+							System.out.println("Your new ballance is $"+ p.getMoney());
+						}
 					}
 					
 					// press enter to move on to the next player's turn
@@ -87,10 +93,10 @@ public class MonopolyRunner
 			}
 			
 			
-			// ask each player to choose a unnique token 
+			// ask each player to choose a unique token 
 			for (int i = 0; i < playerCount; i++) {
 			
-				System.out.println("\nPlayer " + (i + 1) + ", what piece would you like to play?");
+				System.out.println("\nPlayer " + (i + 1) + ", what token would you like to play?");
 				for (int j = 1; j <= Database.gameDatabase.get(gameIndex).getPieces().getSize(); j++) {
 					System.out.println("(" + j + ") " + Database.gameDatabase.get(gameIndex).getPieces().getPiece(j-1));
 				}
