@@ -1,17 +1,42 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class MonopolyRunner
 	{
 	
 	private static ArrayList<Player> playerList = new ArrayList<Player>();
-public static int money = 1500;
+	
 		public static void main(String[] args)
 			{
 			Database.generateDatabase();
 			
 			Scanner scanner = new Scanner(System.in);
 			
-			System.out.println("What game would you like to play?");
+			playerSetup(scanner);
+			
+			
+			
+			
+			
+			
+			//if(firstResponse == 1) {
+				//Database.generateDatabase();
+			//Database.gameDatabase.get(gameIndex);	
+				
+			//}
+//			while(true) {
+//			System.out.println("You have " + money + "$");
+//			dice.runDice();
+//			}
+			//System.out.println(dice.totalDice);
+				
+				
+				
+			}
+		
+		public static void playerSetup(Scanner scanner) {
+			
+			System.out.println("Which game would you like to play?");
 			for (int i = 1; i <= Database.gameDatabase.size(); i++) {
 				System.out.println("(" + i + ") " + Database.gameDatabase.get(i-1).getTitle());
 			}
@@ -22,6 +47,10 @@ public static int money = 1500;
 			System.out.println("How many players?");
 			int playerCount = Integer.parseInt(scanner.next());
 			scanner.nextLine();
+			if (playerCount > 8 || playerCount < 1) {
+				System.out.println("Please try again with a valid input.");
+				System.exit(0);
+			}
 			
 			for (int i = 0; i < playerCount; i++) {
 			
@@ -36,20 +65,6 @@ public static int money = 1500;
 				playerList.add(new Player(Database.gameDatabase.get(gameIndex).getPieces().getPiece(pieceIndex-1), 1500, 0));
 				Database.gameDatabase.get(gameIndex).getPieces().removePiece(pieceIndex-1);
 			}
-			
-			//if(firstResponse == 1) {
-				//Database.generateDatabase();
-			//Database.gameDatabase.get(gameIndex);	
-				
-			//}
-			while(true) {
-			System.out.println("You have " + money + "$");
-			dice.runDice();
-			}
-			//System.out.println(dice.totalDice);
-				
-				
-				
-			}
+		}
 
 	}
