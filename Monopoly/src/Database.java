@@ -20,6 +20,7 @@ public class Database {
 						new PropertyGroup8("Dark Blue","Park Place",350,37,"Boardwalk",400,39)),
 				new UtilityGroup("Utilities","Electric Company",110,12,"Water Works", 115,28),
 				new RailroadGroup("Railroads", 200, "Reading Railroad", 5, "Pennsylvania Railroad", 15, "B. & O. Railroad", 25, "Short Line", 35),
+				new SpecialSpaces("Go", 200, "Income Tax", 200, "Jail", 50, "Free Parking", 0, "Go To Jail", 0, "Luxury Tax", 100),
 				//new ChanceCards(), // Import Chance cards with a .csv file in the format: cardTitle,cardContent,Action
 				//new CommunityChestCards(), // Import Community Chest cards with a .csv file in the format: cardTitle,cardContent,Action
 				new Pieces("Top hat", "Dog", "Thimble", "Boot", "Wheelbarrow", "Cat", "Iron", "Battleship")
