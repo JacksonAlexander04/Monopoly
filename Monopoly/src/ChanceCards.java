@@ -1,14 +1,18 @@
 
 public class ChanceCards extends Game {
 
-	static int randomChance = (int)(Math.random() * 5) + 1;
+	
 	
 	int location;
 	
 
 	public static int ChanceCards() {
-
-			System.out.println("You have landed on a chance card");
+		
+		
+		
+		
+			System.out.println("You pick the top chance card");
+			int randomChance = (int)(Math.random() * 5) + 1;
 			
 			if(randomChance == 1)
 				{	
@@ -27,15 +31,19 @@ public class ChanceCards extends Game {
 			
 			else if(randomChance == 3)
 				{
-					System.out.println("Go to Pacific Avenue");
-					return 31;
+					System.out.println("You lose $100");
+					Player.money = Player.money - 100;
+					return Player.location;
 				}
+			
 		
 			else if(randomChance == 4)
 				{
-					System.out.println("Go to Electric Company");
-					return 12;
+					System.out.println("You find $100");
+					Player.money = Player.money + 100;
+					return Player.location;
 				}
+			
 			
 			else if(randomChance == 5)
 				{

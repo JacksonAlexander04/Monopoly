@@ -6,7 +6,8 @@ public class MonopolyRunner
 
 	
 	private static ArrayList<Player> playerList = new ArrayList<Player>();
-	private static int gameIndex = 0;
+	public static ArrayList<Inventory>Inventory = new ArrayList<Inventory>();
+	public static int gameIndex = 0;
 	private static boolean stillPlaying = true;
 	
 		public static void main(String[] args)
@@ -44,7 +45,7 @@ public class MonopolyRunner
 					System.out.println("You rolled the number " + diceRoll + " and landed on " + locationConverter(p.getLocation()).split("^[0-9]{1,3} ")[1]);
 					// special actions for chance and community chest
 					if (p.getLocation() == 2 || p.getLocation() == 17 || p.getLocation() == 33) {
-						Database.gameDatabase.get(gameIndex).getCommunityChestCards();
+						p.setLocation(CommunityChestCards.CommunityChestCards());
 					}
 					else if (p.getLocation() == 7 || p.getLocation() == 22 || p.getLocation() == 36) {
 
@@ -63,18 +64,36 @@ public class MonopolyRunner
 							p.setMoney(p.getMoney()-Integer.parseInt(locationConverter(p.getLocation()).split(" ", 2)[0]));
 							System.out.println("Your new balance is $"+ p.getMoney());
 							p.addProperty(new String[] {locationConverter(p.getLocation()).split("^[0-9]{1,3} ")[1], }); //add rent
+							Inventory.add(new Inventory(locationConverter(p.getLocation()).split("^[0-9]{1,3} ")[1]));
 						}
 					}
 					
 					// press enter to move on to the next player's turn
-					System.out.println("Press enter to continue. ");
-					scanner.nextLine();
-					
+					System.out.println("Would you like to see all of the properties you own?  (y/n)");
+					if(scanner.nextLine().equals("y")) {
+						System.out.println("You own: ");
+						for(int i = 0; i < Player.inventory.size(); i++){
+							
+							System.out.println(Inventory.get(i).getName());
+							
+						}
+						
+					}
+					else {
+						System.out.println("Press enter to continue. ");
+						scanner.nextLine();
+
+					}
+										
 				}
 				
 			}
 		}
 		
+		
+
+
+
 		public static void playerSetup(Scanner scanner) {
 			
 			// options to play different monopoly games

@@ -2,10 +2,11 @@ import java.util.ArrayList;
 
 public class Player {
 
-	private String name;
-	private int money;
-	private int location;
-	private ArrayList <String[]> inventory = new ArrayList <String[]> ();
+	
+	public String name;
+	public static int money;
+	public static int location;
+	public static ArrayList <String[]> inventory = new ArrayList <String[]> ();
 	
 	public Player (String n, int m, int l, ArrayList <String[]> i) {
 		
@@ -24,7 +25,7 @@ public class Player {
 		this.name = name;
 	}
 
-	public int getMoney() {
+	public  int getMoney() {
 		return money;
 	}
 
