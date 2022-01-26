@@ -46,5 +46,17 @@ public class Player {
 	{
 		inventory.add(s);
 	}
+	public void printInventory() {
+		for(int i = 0; i < inventory.size(); i++) {
+		System.out.println(inventory.get(i)[0]);
+		}
+	}
+	public void reverseMovement(int il) {
+		MonopolyRunner.gameIndex-= il;
+		if(MonopolyRunner.gameIndex<0) {
+			MonopolyRunner.gameIndex+=40;
+		}
+		
+	}
 	
 }
