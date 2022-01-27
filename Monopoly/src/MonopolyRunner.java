@@ -21,19 +21,22 @@ public class MonopolyRunner
 			
 			playerSetup(scanner); // setup the player with introductory prompts
 			
-			runPlayer(scanner); // the actual runner
+			runPlayer();
+			//runPlayer(scanner); // the actual runner
 			
 		}
 		
-		public static void runPlayer(Scanner scanner) {
+		public static void runPlayer() {
+			
 			
 			while(stillPlaying) {
-				
+				Scanner scanner = new Scanner(System.in);
 				// for loop that allows each player to have 1 turn before moving on
 				for (Player p : playerList) {
 					System.out.println("\n\n\n" + p.getName() + ", it's your turn.");
 					int diceRoll = dice.runDice(); // Roll the dice
-					p.setLocation(p.getLocation() + diceRoll); // move the token to the new location
+					p.setLocation(p.getLocation() + diceRoll);// move the token to the new location
+					
 //					System.out.println(p.getLocation());
 //					System.out.println(p.getMoney());
 					
@@ -46,9 +49,41 @@ public class MonopolyRunner
 					// print location that was landed on
 					System.out.println("You rolled the number " + diceRoll + " and landed on " + locationConverter(p.getLocation()).split("^[0-9]{1,3} ")[1]);
 					// special actions for chance and community chest
-					if(p.getLocation()== 20) {
+					if(p.getLocation() == 20) {
 						p.reverseMovement(diceRoll);
 					}
+					if(p.getLocation() == 30) {
+						p.setLocation(10);
+							System.out.println("Go to jail without passing Go.");
+							System.out.println("You have three options: ");
+							System.out.println("(1) Try to roll doubles");
+							System.out.println("(2) Pay a $50 fine");
+							System.out.println("(3) Wait a turn(for a total of 3 turn to get out)");
+							int jailAnswer = scanner.nextInt();
+							if(jailAnswer == 1) {
+								dice.runDice();
+								if(dice.dice1==dice.dice2) {
+									System.out.println("You rolled doubles and can get out of jail ");
+									runPlayer();
+								}
+								else {
+									System.out.println("You are stuck in jail this turn and can try to get out again nex turn.");
+								}
+								
+							}
+							if(jailAnswer == 2) {
+								System.out.println("You paid $50 to get out of jail this turn");
+								p.setMoney(p.getMoney()-50);
+								runPlayer();
+							}
+							if(jailAnswer == 3) {
+								System.out.println("You will wait in jail for this turn");
+							}
+							
+							
+						}
+						
+					
 					if (p.getLocation() == 2 || p.getLocation() == 17 || p.getLocation() == 33) {
 						p.setLocation(CommunityChestCards.CommunityChestCards());
 					}
@@ -94,6 +129,7 @@ public class MonopolyRunner
 				
 			}
 		}
+		
 		
 		
 
