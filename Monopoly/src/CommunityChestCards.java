@@ -13,7 +13,7 @@ public class CommunityChestCards extends Game {
 			{	
 				
 				System.out.println("Go To Jail");
-				return 10;
+				return 30;
 				
 			}
 		

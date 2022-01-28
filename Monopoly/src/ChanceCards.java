@@ -18,7 +18,7 @@ public class ChanceCards extends Game {
 				{	
 					
 					System.out.println("Go To Jail");
-					return 10;
+					return 30;
 					
 				}
 			

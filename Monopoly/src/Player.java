@@ -33,11 +33,11 @@ public class Player {
 		this.money = money;
 	}
 
-	public int getLocation() {
+	public static int getLocation() {
 		return location;
 	}
 
-	public void setLocation(int location) {
+	public  void setLocation(int location) {
 		this.location = location;
 
 	}
@@ -51,12 +51,9 @@ public class Player {
 		System.out.println(inventory.get(i)[0]);
 		}
 	}
-	public void reverseMovement(int il) {
-		MonopolyRunner.gameIndex-= il;
-		if(MonopolyRunner.gameIndex<0) {
-			MonopolyRunner.gameIndex+=40;
-		}
+	
 		
-	}
+	
+	
 	
 }

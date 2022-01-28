@@ -11,6 +11,8 @@ public class MonopolyRunner
 	private static boolean stillPlaying = true;
 	public static boolean isOwned = false;
 	public static int pieceIndex;
+	public static boolean inJail;
+	public static boolean clockwise = true;
 	
 		public static void main(String[] args)
 			{
@@ -30,12 +32,20 @@ public class MonopolyRunner
 			
 			
 			while(stillPlaying) {
+				
 				Scanner scanner = new Scanner(System.in);
 				// for loop that allows each player to have 1 turn before moving on
 				for (Player p : playerList) {
+					if(inJail == false) {
 					System.out.println("\n\n\n" + p.getName() + ", it's your turn.");
 					int diceRoll = dice.runDice(); // Roll the dice
+					
+					//if(clockwise) {
 					p.setLocation(p.getLocation() + diceRoll);// move the token to the new location
+					//}
+					//else {
+						//p.setLocation(p.getLocation() - diceRoll);
+					//}
 					
 //					System.out.println(p.getLocation());
 //					System.out.println(p.getMoney());
@@ -50,7 +60,7 @@ public class MonopolyRunner
 					System.out.println("You rolled the number " + diceRoll + " and landed on " + locationConverter(p.getLocation()).split("^[0-9]{1,3} ")[1]);
 					// special actions for chance and community chest
 					if(p.getLocation() == 20) {
-						p.reverseMovement(diceRoll);
+						clockwise = false;
 					}
 					if(p.getLocation() == 30) {
 						p.setLocation(10);
@@ -65,9 +75,11 @@ public class MonopolyRunner
 								if(dice.dice1==dice.dice2) {
 									System.out.println("You rolled doubles and can get out of jail ");
 									runPlayer();
+									inJail = false;
 								}
 								else {
 									System.out.println("You are stuck in jail this turn and can try to get out again nex turn.");
+									inJail = true;
 								}
 								
 							}
@@ -75,9 +87,11 @@ public class MonopolyRunner
 								System.out.println("You paid $50 to get out of jail this turn");
 								p.setMoney(p.getMoney()-50);
 								runPlayer();
+								inJail = false;
 							}
 							if(jailAnswer == 3) {
 								System.out.println("You will wait in jail for this turn");
+								inJail = true;
 							}
 							
 							
@@ -128,6 +142,116 @@ public class MonopolyRunner
 				}
 				
 			}
+				for (Player p : playerList) {
+					if(inJail == false) {
+					System.out.println("\n\n\n" + p.getName() + ", it's your turn.");
+					int diceRoll = dice.runDice(); // Roll the dice
+					
+					//if(clockwise) {
+					p.setLocation(p.getLocation() + diceRoll);// move the token to the new location
+					//}
+					//else {
+						//p.setLocation(p.getLocation() - diceRoll);
+					//}
+					
+//					System.out.println(p.getLocation());
+//					System.out.println(p.getMoney());
+					
+					// if passing go, receive allowance
+					if (p.getLocation() >= 40) {
+						p.setLocation(p.getLocation()-40);
+						p.setMoney(p.getMoney()+Database.gameDatabase.get(gameIndex).getSpecialSpaces().getGoPrice());
+					}
+					
+					// print location that was landed on
+					System.out.println("You rolled the number " + diceRoll + " and landed on " + locationConverter(p.getLocation()).split("^[0-9]{1,3} ")[1]);
+					// special actions for chance and community chest
+					if(p.getLocation() == 20) {
+						clockwise = false;
+					}
+					if(p.getLocation() == 30) {
+						p.setLocation(10);
+							System.out.println("Go to jail without passing Go.");
+							System.out.println("You have three options: ");
+							System.out.println("(1) Try to roll doubles");
+							System.out.println("(2) Pay a $50 fine");
+							System.out.println("(3) Wait a turn(for a total of 3 turn to get out)");
+							int jailAnswer = scanner.nextInt();
+							if(jailAnswer == 1) {
+								dice.runDice();
+								if(dice.dice1==dice.dice2) {
+									System.out.println("You rolled doubles and can get out of jail ");
+									runPlayer();
+									inJail = false;
+								}
+								else {
+									System.out.println("You are stuck in jail this turn and can try to get out again nex turn.");
+									inJail = true;
+								}
+								
+							}
+							if(jailAnswer == 2) {
+								System.out.println("You paid $50 to get out of jail this turn");
+								p.setMoney(p.getMoney()-50);
+								runPlayer();
+								inJail = false;
+							}
+							if(jailAnswer == 3) {
+								System.out.println("You will wait in jail for this turn");
+								inJail = true;
+							}
+							
+							
+						}
+						
+					
+					if (p.getLocation() == 2 || p.getLocation() == 17 || p.getLocation() == 33) {
+						p.setLocation(CommunityChestCards.CommunityChestCards());
+					}
+					else if (p.getLocation() == 7 || p.getLocation() == 22 || p.getLocation() == 36) {
+
+						p.setLocation(ChanceCards.ChanceCards());
+
+					}
+					
+					
+					// if landed on a purchasable property, execute this. 
+					if (p.getLocation() != 7 && p.getLocation() != 22 && p.getLocation() != 36 && p.getLocation() != 2 && p.getLocation() != 17 && p.getLocation() != 33 && p.getLocation() != 0 && p.getLocation() != 10 && p.getLocation() != 20 && p.getLocation() != 30 && p.getLocation() != 38 && p.getLocation() != 4) {
+						System.out.println("Nobody owns this property, would you like to purchase it? (y/n)\nThe"
+								+ " price is " + locationConverter(p.getLocation()).split(" ", 2)[0] + "\nYour current balance is $" + p.getMoney());
+						
+						String yOrN = scanner.nextLine();
+						if (yOrN.equals("y")) {
+							p.setMoney(p.getMoney()-Integer.parseInt(locationConverter(p.getLocation()).split(" ", 2)[0]));
+							System.out.println("Your new balance is $"+ p.getMoney());
+							p.addProperty(new String[] {locationConverter(p.getLocation()).split("^[0-9]{1,3} ")[1], }); //add rent
+							
+						}
+					}
+					
+					// press enter to move on to the next player's turn
+					System.out.println("Would you like to see all of the properties you own?  (y/n)");
+					if(scanner.nextLine().equals("y")) {
+						System.out.println("The " + p.getName() + " owns: ");
+						
+							p.printInventory();
+							
+							
+						
+						
+					}
+					else {
+						System.out.println("Press enter to continue. ");
+						scanner.nextLine();
+
+					}
+										
+				}
+				
+			}
+				
+			}
+			
 		}
 		
 		
